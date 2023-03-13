@@ -46,6 +46,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         ;
 
         http
+                .csrf().disable()
+        ;
+
+        http
                 .formLogin()
                 /*.successHandler(new AuthenticationSuccessHandler() {
                     @Override

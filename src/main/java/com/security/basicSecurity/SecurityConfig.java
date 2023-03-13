@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .formLogin()
-                .successHandler(new AuthenticationSuccessHandler() {
+                /*.successHandler(new AuthenticationSuccessHandler() {
                     @Override
                     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
                         RequestCache requestCache = new HttpSessionRequestCache();
@@ -55,24 +55,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         String redirectUrl = savedRequest.getRedirectUrl();
                         response.sendRedirect(redirectUrl);
                     }
-                })
+                })*/
         ;
 
-        http
+        /*http
                 .exceptionHandling()
-                .authenticationEntryPoint(new AuthenticationEntryPoint() {
+                *//*.authenticationEntryPoint(new AuthenticationEntryPoint() {
                     @Override
                     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
                         response.sendRedirect("/login");
                     }
-                })
+                })*//*
                 .accessDeniedHandler(new AccessDeniedHandler() {
                     @Override
                     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
                         response.sendRedirect("/denied");
                     }
                 })
-        ;
+        ;*/
         /*http
                 .sessionManagement()
                 .maximumSessions(1)
